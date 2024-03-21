@@ -1,0 +1,11 @@
+version: '3.8'
+
+services:
+  php-to-pdf:
+    build:
+      context: .  # Относительный путь к каталогу с Dockerfile
+    volumes:
+      - ./catalog:/catalog  # Замените на ваш путь для монтирования
+      - ./converted_pdf:/converted_pdf  # Замените на ваш путь для монтирования
+    # Если необходима конкретная команда в ENTRYPOINT/CMD:
+    # command: run-script
