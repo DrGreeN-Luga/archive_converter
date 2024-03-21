@@ -21,8 +21,11 @@ RUN ln -s /usr/bin/pygmentize /usr/local/bin/ccat
 
 # Создаем рабочую директорию
 RUN mkdir /converted_pdf
+
 RUN mkdir /catalog
 COPY ./catalog /catalog
+
+COPY ./custom.css /styles/custom.css
 
 #COPY ./script.sh ./script.sh
 #RUN chmod +x /catalog/script.sh
