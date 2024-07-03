@@ -11,7 +11,8 @@ RUN apt-get update && apt-get install -y \
     coreutils
 
 # Установка Pygments для подсветки синтаксиса
-RUN pip3 install Pygments
+RUN pip3 install Pygments --break-system-packages
+RUN pip3 install vue-lexer --break-system-packages
 
 # Удаляем файлы, необходимые для установки, но не для выполнения программ
 RUN apt-get clean && rm -rf /var/lib/apt/lists/*
